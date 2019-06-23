@@ -1,0 +1,27 @@
+/*AVENIR*/
+@font-face {
+    font-family: 'Avenir';
+    src:url('../fonts/Avenir/AvenirNext.eot'),
+        url('../fonts/Avenir/AvenirNext.eot') format('embedded-opentype'),
+        url('../fonts/Avenir/AvenirNext.woff2') format('woff2'),
+        url('../fonts/Avenir/AvenirNextCyr-Medium.woff') format('woff'),
+        url('../fonts/Avenir/AvenirNextCyr-Medium.ttf') format('truetype'),
+        url('../fonts/Avenir/AvenirNextCyr-Medium.svg') format('svg'),
+        url('../fonts/Avenir/AvenirNext-DemiBold.eot') format('embedded-opentype'),
+        url('../fonts/Avenir/AvenirNext-DemiBold.woff2') format('woff2'),
+        url('../fonts/Avenir/AvenirNext-DemiBold.woff') format('woff'),
+        url('../fonts/Avenir/AvenirNext-DemiBold.ttf') format('truetype'),
+        url('../fonts/Avenir/AvenirNext-DemiBold.svg') format('svg');
+        url('../fonts/Avenir/') format('embedded-opentype')
+}
+
+/*HELVETICA*/
+@font-face {
+    font-family: 'Helvetica';
+    src:url('../fonts/Helvetica/HelveticaNeueCyr-Roman.eot'),
+    url('../fonts/Helvetica/HelveticaNeueCyr-Roman.eot') format('embedded-opentype'),
+    url('../fonts/Helvetica/HelveticaNeueCyr-Roman.woff2') format('woff2'),
+    url('../fonts/Helvetica/HelveticaNeueCyr-Roman.woff') format('woff'),
+    url('../fonts/Helvetica/HelveticaNeueCyr-Roman.ttf') format('truetype'),
+    url('../fonts/Helvetica/HelveticaNeueCyr-Roman.svg') format('svg');
+}

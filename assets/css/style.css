@@ -1,0 +1,1208 @@
+/*GENERAL*/
+@import "reset.css";
+
+body {
+    position: relative;
+}
+
+body > * {
+    box-sizing: border-box;
+}
+
+h1, h2, p, a, li {
+    color: #0b0b10;
+    font-family: sans-serif;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 60px;
+    font-family: Avenir, sans-serif;
+    letter-spacing: -0.6px;
+    line-height: 70px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 48px;
+    font-family: Avenir, sans-serif;
+    letter-spacing: -0.48px;
+    line-height: 56px;
+}
+
+p, a, li, span {
+    font-size: 24px;
+    text-decoration: none;
+    font-family: Helvetica, sans-serif;
+}
+
+img {
+    display: block;
+}
+
+.even-blocks h1,.even-blocks h2, .even-blocks p, .even-blocks a, .even-blocks span, .even-blocks li {
+    color: #fff;
+}
+
+.app-store-button {
+    display: block;
+    width: 138px;
+    position: relative;
+    border: 0;
+    text-align: left;
+    text-decoration: none;
+    padding: 7px 14px 7px 42px;
+    border-radius: 5px;
+    font-size: 12px;
+    background-color: rgb(11, 11, 16);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+    color: #fff;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.app-store-button:hover {
+    background-color: #4fadfb;
+}
+
+.app-store-button:before {
+    position: absolute;
+    top: 7px;
+    left: 10px;
+    width: 22px;
+    height: 28px;
+    content: '';
+    background:url(../img/apple-logo.svg) no-repeat;
+    background-size: 100% auto;
+}
+
+
+
+.app-store-button__big-text {
+    display: block;
+    padding-top: 1px;
+    font-size: 18px;
+}
+
+/*HEADER*/
+.header {
+    position: fixed;
+    width: 100%;
+    padding: 10px 0;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    z-index: 1;
+}
+
+.header__content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo {
+    width: 100px;
+}
+
+.header__burger {
+    cursor: pointer;
+    position: relative;
+    width: 25px;
+    height: 16px;
+}
+
+.header-burger__line {
+    position: absolute;
+    background-color: #303132;
+    right: 0;
+    width: 25px;
+    height: 2px;
+    transition: .3s;
+    transform-origin: center;
+}
+
+.header-burger__line:nth-child(1) {
+    top:0;
+}
+
+.header-burger__line:nth-child(2){
+    top:50%;
+    transform: translateY(-50%);
+}
+
+.header-burger__line:nth-child(3){
+    bottom: 0;
+    width: 20px;
+}
+
+.header.active .header__burger {
+    width: 30px;
+    height: 25px;
+}
+
+.header.active .header-burger__line:nth-child(1) {
+    top: 50%;
+    transform:translateY(-50%) rotate(45deg);
+}
+
+.header.active .header-burger__line:nth-child(2){
+    opacity: 0;
+}
+
+.header.active .header-burger__line:nth-child(3){
+    width: 25px;
+    top: 50%;
+    transform:translateY(-50%) rotate(-45deg);
+}
+
+.nav-list-wrapper {
+    width: 100%;
+    height: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-list {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+}
+
+.header.active .nav-list {
+    left: 0;
+}
+
+.nav-list-item {
+    position: relative;
+
+    margin-right: 80px;
+}
+
+.nav-list-item a {
+    line-height: 100%;
+    display: block;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.nav-list-item:before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -12px;
+    width: 2px;
+    height: 0px;
+    border-radius: 100px;
+    background-image: linear-gradient(45deg, #13c6b9 0%, #42d473 100%);
+    content: '';
+    transition: .3s;
+}
+
+.active.nav-list-item:before {
+    height: 11px;
+}
+
+nav-list-item:last-child {
+    margin-right: 0;
+}
+/*MAIN*/
+.main {
+    position: relative;
+    height: 100vh;
+    min-height: 740px;
+    display: flex;
+    align-items: center;
+}
+
+.main__content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: no-repeat url(../img/main-background.png) bottom center;
+}
+
+.main__mobile-title {
+    display: none;
+}
+
+.main__phone-wrapper {
+    margin-right: 150px;
+}
+
+.main__text-wrapper {
+    position: relative;
+}
+
+.main__slide-wrapper, .registration__slide-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 0 auto;
+    width: 300px;
+}
+
+.main__slider, .registration__slider {
+    margin: 0 auto;
+    width: 269px;
+    position: absolute;
+}
+
+.main__phone {
+    width: 100%;
+    filter: drop-shadow(0 0 50px rgba(0, 0, 0, 0.2));
+}
+
+.main__list {
+    display: flex;
+    margin: 52px 0;
+}
+
+.main-list__items {;
+    position: relative;
+    padding-left: 46px;
+    cursor: pointer;
+    transition: .3s;
+    display: flex;
+    align-items: center;
+    margin-right: 60px;
+}
+
+.main-list__items:last-child {
+    margin-right: 0;
+}
+
+.main-list__items.active {
+    transform: scale(1.15);
+}
+
+.main-list__items:before {
+    position: absolute;
+    left: 0;
+    height: 30px;
+    width: 32px;
+    content: '';
+}
+
+.main-list__items:nth-child(1):before {
+    background:no-repeat url(../img/icon-shield.svg) center;
+    background-size: auto 100%;
+}
+
+.main-list__items:nth-child(2):before {
+    background:no-repeat url(../img/icon-wallet.svg) center;
+    background-size: auto 100%;
+}
+
+.main-list__items:nth-child(3):before {
+    background:no-repeat url(../img/icon-money.svg) center;
+    background-size: auto 100%;
+}
+
+.main__down-button {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.main__down-button img{
+    width: 30px;
+}
+
+.main__down-button-mobile {
+    display: none;
+}
+
+
+/*ABILITIES*/
+.abilities {
+    padding: 100px 0 212px 0;
+    background: url(../img/abilities-background.png) top center;
+    background-size: auto 100%;
+}
+
+.abilities__title {
+    margin-bottom: 100px;
+}
+
+.abilities__content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.video {
+    width: 505px;
+    position: relative;
+}
+.video-active {
+    display: block;
+    width: 505px;
+    height: 283px;
+}
+
+.video__preview {
+    width: 100%;
+}
+
+.video__preview source, .video__preview img {
+    width: 100%;
+}
+
+.video__play, .video__play-hover {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: .2s;
+    width: 86px;
+}
+
+.video__play-hover {
+    filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.4));
+}
+
+.video:hover .video__play {
+    opacity: 0;
+}
+
+.abilities__text-wrapper {
+    width: 50%;
+    padding-left: 10px;
+}
+
+.abilities-list__item {
+    position: relative;
+    margin-bottom: 35px;
+    line-height: 30px;
+    letter-spacing: 0.6px;
+}
+
+.abilities-list__item:last-child {
+    margin-bottom: 60px;
+}
+
+.abilities-list__item:before {
+    position: absolute;
+    left: -46px;
+    top: 0;
+    height: 30px;
+    width: 30px;
+    background: url(../img/llist-check.png);
+    content: '';
+}
+
+/*REGISTRATION*/
+.registration {
+    padding: 50px 0 87px 0;
+}
+
+.registration__title {
+    margin-bottom: 50px;
+}
+
+.registration__content-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.registration__phone-wrapper {
+    width: 50%;
+}
+
+.registration__phone {
+    margin: 0 auto;
+    width: 300px;
+    filter: drop-shadow(0 0 50px rgba(0, 0, 0, 0.2));
+}
+
+.registration__text-wrapper {
+    width: 50%;
+}
+
+.registration__subtitle {
+    margin-bottom: 50px;
+    color: #999999;
+}
+
+.registration-steps-list__item {
+    cursor: pointer;
+    padding-left: 11px;
+    margin-bottom: 50px;
+    transition: 0.3s;
+}
+
+.registration-steps-list__item a {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.registration-steps-list__item:last-child {
+    margin-bottom: 0;
+}
+
+.registration-steps-list__number {
+    font-family: Avenir, sans-serif;
+    position: relative;
+    margin-right: 35px;
+    font-size: 30px;
+    font-weight: 700;
+    background-image: linear-gradient(45deg, #13c6b9 0%, #42d473 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: 0.3s;
+}
+
+.registration-steps-list__number:before {
+    position: absolute;
+    left: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 2px;
+    content: '';
+    background-color: #000;
+    transition: .5s;
+}
+
+.registration-steps-list__item:hover .registration-steps-list__number:before, .registration-steps-list__item.active .registration-steps-list__number:before {
+    left: -35px;
+}
+
+
+/*FOOTER*/
+.footer {
+    padding: 80px 0 50px 0;
+    background:#0b0b10 url(../img/footer-background.jpg) center center;
+    background-size: auto 100%;
+}
+
+.footer__content-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__links-list {
+    margin: 0 auto auto 175px;
+}
+
+.footer__logo {
+    width: 100px;
+    margin-bottom: 30px;
+}
+
+.footer-ifo-section__paragraph {
+    margin-bottom: 30px;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    line-height: 18px;
+}
+
+.footer .app-store-button {
+    height: 49px;
+    width: 137px;
+    position: relative;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.footer .app-store-button:before {
+    z-index: 1;
+}
+
+.footer .app-store-button:hover .app-store-gradient {
+    left: -100%;
+}
+
+.footer .app-store-button__big-text {
+    margin-left: 30px;
+}
+
+.app-store-gradient {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200%;
+    height: 100%;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#13c6b9+0,42d473+50,13c6b9+75 */
+    background: #13c6b9; /* Old browsers */
+    background: -moz-linear-gradient(left,  #13c6b9 0%, #42d473 50%, #13c6b9 75%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #13c6b9 0%,#42d473 50%,#13c6b9 75%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #13c6b9 0%,#42d473 50%,#13c6b9 75%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#13c6b9', endColorstr='#13c6b9',GradientType=1 ); /* IE6-9 */
+    transition: .3s;
+    z-index: 0;
+}
+
+
+.button-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+
+.footer-links-list__item {
+    margin-bottom: 30px;
+}
+
+.footer-links-list__item:last-child {
+    margin-bottom: 0;
+}
+
+.footer-links-list__item a {
+    font-size: 16px;
+    text-decoration: underline;
+}
+
+.footer__social-section {
+    display: flex;
+    align-items: flex-start;
+}
+
+.footer-social-section__item {
+    padding: 0;
+    height: 40px;
+    width: 40px;
+    display: block;
+    margin-right: 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+.footer__social-section img {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.footer__socials-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 40px;
+    width: 300%;
+    transition: .3s;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+36,42d473+75,13c6b9+99 */
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(left,  #ffffff 0%, #ffffff 36%, #13c6b9 75%, #42d473 99%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #ffffff 0%, #ffffff 36%, #13c6b9 75%, #42d473 99%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #ffffff 0%, #ffffff 36%, #13c6b9 75%, #42d473 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#42d473',GradientType=1 ); /* IE6-9 */
+    z-index: 0;
+}
+
+.footer-social-section__item:hover .footer__socials-bg {
+    left: -200%;
+}
+
+.footer-social-section__item:last-child {
+    margin-right: 0;
+}
+
+
+
+@media screen and (max-width: 1199.98px) {
+    .video {
+        width: 50%;
+    }
+
+    .video-active {
+        width: 465px;
+        height: 260px;
+    }
+
+    .abilities-list {
+        padding-left: 55px;
+    }
+
+    .abilities .app-store-button{
+        margin-left: 55px;
+    }
+
+    .footer__links-list {
+        margin: 0 auto 0 auto;
+    }
+
+    .main__phone-wrapper {
+        margin-right: 75px;
+    }
+}
+
+@media screen and (max-width: 991.98px) {
+    h1 {
+        font-size: 40px;
+        line-height: 52px;
+    }
+
+    .main {
+        height: 720px;
+    }
+
+    .main__title {
+        margin-bottom: 50px;
+    }
+
+    .main__phone-wrapper {
+        margin-right: 30px;
+    }
+
+    .main__phone {
+        width: 220px;
+    }
+
+    .main__content-wrapper {
+        background-size: auto 430px;
+    }
+
+    .main__list {
+        flex-direction: column;
+        margin: 0 0 60px 0;
+    }
+
+    .main-list__items {
+        padding-left: 60px;
+        margin-bottom: 27px;
+        margin-right: 0;
+    }
+
+    .abilities__content-wrapper {
+        flex-direction: column;
+    }
+
+    .video  {
+        margin: 0 auto 50px auto;
+    }
+
+
+    .video-active {
+        margin: 0 auto;
+        width: 345px;
+        height: 193px;
+    }
+
+    .abilities__text-wrapper {
+        width: 100%;
+    }
+
+    .abilities .app-store-button {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .registration {
+        position: relative;
+        overflow-x: hidden;
+    }
+
+    .registration:before {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 536px;
+        height: 220px;
+        background: no-repeat url(../img/main-background.png) left top;
+        background-size: auto 100%;
+        content: '';
+    }
+
+    .registration__phone {
+        width: 220px;
+    }
+
+    .registration__content-wrapper {
+        flex-direction: column;
+    }
+
+    .registration__phone-wrapper {
+        margin-bottom: 50px;
+    }
+
+    .registration__text-wrapper {
+        width: auto;
+    }
+
+    .footer__content-wrap {
+        flex-direction: column;
+    }
+    .footer__logo {
+        margin: 0 auto 30px auto;
+    }
+    .footer-ifo-section__paragraph {
+        text-align: center;
+    }
+    .footer__info-section .app-store-button {
+        display: block;
+        margin: 0 auto 55px auto;
+    }
+    .footer__links-list {
+        margin: 0 auto 50px auto;
+    }
+    .footer__social-section {
+        justify-content: center;
+    }
+
+    .main__slider, .registration__slider {
+        width: 197px;
+    }
+
+    .main-list__items.active {
+        transform: scale(1.15) translateX(20px);
+    }
+
+}
+
+@media screen and (max-width: 767.98px) {
+    .app-store-button {
+        width: 120px;
+        padding-bottom: 10px;
+    }
+
+    .header .container {
+        position: relative;
+    }
+
+    .main__slide-wrapper, .registration__slide-wrapper {
+        width: auto;
+    }
+
+    .nav-list-wrapper {
+        position: absolute;
+        width: 100%;
+        overflow: inherit;
+
+    }
+
+    .nav-list {
+        width: 100%;
+        padding: 25px;
+        background-color: #fff;
+        flex-direction: column;
+        align-items: flex-end;
+        height: auto;
+        top: 30px;
+        left: 0;
+        z-index: 3;
+        transform: translateX(-200%);
+    }
+
+    .header.active .nav-list {
+        right: 0;
+        transform: translateX(0%);
+    }
+
+    .nav-list-item {
+        text-align: left;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .nav-list-item a {
+        font-size: 18px;
+    }
+
+    .nav-list-item:last-child{
+        margin-bottom: 0;
+    }
+
+    .main-list__items.active {
+        transform: scale(1.15) translateX(10px);
+    }
+    /*GENERAL*/
+    h1 {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    h2 {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    p, li, a, span {
+        font-size: 12px;
+    }
+
+    .main {
+        flex-direction: column;
+        overflow-x: hidden;
+        padding: 90px 0 90px 0;
+        position: relative;
+        height: auto;
+        min-height: auto;
+    }
+
+    .main:before {
+        position: absolute;
+        width: 486px;
+        height: 322px;
+        content: '';
+        left: 50%;
+        bottom: 90px;
+        background:no-repeat url(../img/main-background.png) right bottom;
+        background-size: auto 322px;
+        transform: translateX(-50%);
+    }
+
+    .main__mobile-title {
+        display: block;
+        margin:0 auto 15px auto;
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
+    }
+
+    .main__title {
+        display: none;
+    }
+
+    .main__content-wrapper {
+        background: none;
+    }
+
+    .main-list__items {
+        padding-left: 37px;
+    }
+
+    .main-list__items:last-child {
+        margin-bottom: 0;
+    }
+
+    .main-list__items:before {
+        width: 27px;
+        height: 20px;
+        top: 50%;
+        left: 0px;
+        transform: translateY(-50%);
+    }
+
+    .main-list__items:nth-child(1):before {
+        -webkit-background-size: auto 100%;
+        background-size: auto 100%;
+    }
+
+    .main-list__items:nth-child(2):before {
+        -webkit-background-size: auto 100%;
+        background-size: auto 100%;
+    }
+
+    .main-list__items:nth-child(3):before {
+        -webkit-background-size: 100% auto;
+        background-size: 100% auto;
+    }
+
+    .app-store-button {
+        font-size: 10px;
+    }
+
+    .app-store-button__big-text {
+        font-size: 14px;
+    }
+
+    .footer .app-store-button__big-text {
+        margin-left: 10px;
+    }
+
+
+    .video-active {
+        width: 255px;
+        height: 143px;
+    }
+
+    .video__play, .video__play-hover {
+        width: 40px;
+    }
+
+    .abilities__title {
+        margin-bottom: 30px;
+    }
+
+    .abilities-list__item {
+        line-height: 18px;
+        padding-left: 0;
+        margin-bottom: 30px;
+    }
+
+    .abilities-list__item:before {
+        left: -60px;
+    }
+
+    .registration__subtitle {
+        font-size: 14px;
+    }
+
+    .registration__subtitle {
+        font-size: 14px;
+    }
+
+    .registration-steps-list__item {
+        padding-left: 6px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    .registration-steps-list__number {
+        display: flex;
+        align-items: center;
+        font-size: 19px;
+        line-height: 100%;
+        margin-right: 17px;
+    }
+
+    .registration-steps-list__number:before {
+        top: auto;
+        left: -15px;
+        width: 12px;
+    }
+
+    .registration-steps-list__item:hover .registration-steps-list__number:before, .registration-steps-list__item.active .registration-steps-list__number:before {
+        left: -25px;
+    }
+
+}
+
+@media screen and (max-width: 575.98px) {
+    .main__slider, .registration__slider {
+        width: 172px;
+    }
+
+    .main__slider {
+        margin-left: -15px;
+    }
+
+    .main-list__items.active {
+        transform: scale(1.15) translateX(0px);
+    }
+
+    .main__phone-wrapper {
+        margin-right: 0px;
+    }
+
+    /*GENERAL*/
+    .container {
+        width: 320px;
+    }
+
+    /*MAIN*/
+    .main {
+        padding: 90px 0 25px 0;
+        flex-direction: column;
+    }
+
+    .main .app-store-button {
+        margin-left: 0;
+        width: 120px;
+    }
+
+    .main:before {
+        bottom: 25px;
+    }
+
+    .main__down-button {
+        display: none;
+    }
+
+    .main__down-button-mobile {
+        position: absolute;
+        left: 50%;
+        bottom: -90px;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    .main__down-button-mobile img{
+        width: 20px;
+    }
+
+    .main__phone {
+        width: 190px;
+        margin-left: -30px;
+        filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+    }
+
+
+    .main__list {
+        flex-direction: column;
+        margin: 0 0 60px 0;
+    }
+
+    .main-list__items {
+        font-size: 14px;
+        padding-left: 60px;
+        margin-bottom: 27px;
+    }
+
+    .main-list__items:before {
+        left: 23px;
+    }
+
+    .main .app-store-button {
+        margin-left: 22px;
+    }
+
+
+    /*ABILITIES*/
+    .abilities {
+        background: url(../img/abilities-mobile-background.png) top center;
+        background-size: 577px 100%;
+        padding: 47px 0 89px 0;
+    }
+
+    .abilities__content-wrapper {
+        flex-direction: column;
+    }
+
+    .abilities__title {
+        margin-bottom: 30px;
+    }
+
+    .video {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .abilities__text-wrapper {
+        width: 100%;
+    }
+
+    .abilities-list {
+        padding-left: 0;
+    }
+
+    .abilities-list__item {
+        margin-bottom: 27px;
+        padding-left: 23px;
+        line-height: 18px;
+        letter-spacing: 0.3px;
+    }
+
+    .abilities-list__item:last-child {
+        margin-bottom: 50px;
+    }
+
+    .abilities-list__item:before {
+        top: -5px;
+        left: -10px;
+    }
+
+    /*REGISTRATION*/
+    .registration {
+        padding: 50px 0 55px 0;
+    }
+
+    .registration__title {
+        margin-bottom: 30px;
+    }
+
+    .registration__title > br {
+        display: none;
+    }
+
+    .registration__content-wrapper {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .registration__phone-wrapper, .registration__text-wrapper {
+        width: auto;
+    }
+
+    .registration-steps-list__number {
+        display: flex;
+        align-items: center;
+    }
+
+    .registration__phone-wrapper {
+        margin-bottom: 30px;
+    }
+
+    .registration__phone {
+        width: 190px;
+    }
+
+    /*FOOTER*/
+    .footer {
+        padding: 50px 0;
+        background:#0b0b10 no-repeat url(../img/footer-mobile-background.jpg)top center;
+        background-size: 577px auto;
+    }
+
+    .footer__content-wrap {
+        flex-direction: column;
+    }
+
+    .footer__logo {
+        margin: 0 auto 30px auto;
+    }
+
+    .footer-ifo-section__paragraph {
+        margin-bottom: 30px;
+        font-size: 10px;
+        line-height: 18px;
+        letter-spacing: 0.25px;
+        text-align: center;
+    }
+
+    .footer-ifo-section__paragraph > br {
+        display: none;
+    }
+
+    .footer__info-section .app-store-button {
+        display: block;
+        margin: 0 auto 55px auto;
+    }
+
+    .footer__links-list {
+        margin: 0 auto 50px auto;
+    }
+
+
+    .footer-links-list__item a {
+        font-size: 14px;
+    }
+
+    .footer__social-section {
+        justify-content: center;
+    }
+
+    .footer-social-section__item {
+        margin-right: 23px;
+        width: 33px;
+        height: 33px;
+    }
+
+    .footer__social-section img {
+        width: 101%;
+    }
+}
